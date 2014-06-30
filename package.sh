@@ -23,5 +23,8 @@ DEST_DIR="/usr/local/${NAME}/"
 ### Where the sources live
 SOURCE_DIR="${MY_DIR}/${TARGET}"
 
+#mv the custom reporting jar
+cp reporting-lib/kafka-metrics-reporter-0.0.2.jar $SOURCE_DIR/libs
+
 # run fpm
 /usr/local/bin/fpm -s dir -t deb -a all -n $PACKAGE_NAME -v $PACKAGE_VERSION --prefix $DEST_DIR -C $SOURCE_DIR .
