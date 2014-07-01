@@ -10,8 +10,6 @@ cd $MY_DIR
 NAME=kafka
 REPORTER_JAR=$( readlink --canonicalize 'reporting-lib/kafka-metrics-reporter.jar' )
 
-kafka-metrics-reporter.jar
-
 ### This is something like kafka_[version stuff]
 ### This is a symlink to the dir with the version of kafka we want to build
 TARGET=$( basename $( readlink --canonicalize $NAME ) )
