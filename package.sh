@@ -8,6 +8,7 @@ cd $MY_DIR
 
 ### Name of the package, project, etc
 NAME=kafka
+REPORTER_JAR=$( readlink --canonicalize 'reporting-lib/kafka-metrics-reporter.jar' )
 
 ### This is something like kafka_[version stuff]
 ### This is a symlink to the dir with the version of kafka we want to build
@@ -22,6 +23,9 @@ DEST_DIR="/usr/local/${NAME}/"
 
 ### Where the sources live
 SOURCE_DIR="${MY_DIR}/${TARGET}"
+
+# copy the custom reporting jar into the kafka path
+cp $REPORTER_JAR $SOURCE_DIR/libs
 
 # run fpm
 /usr/local/bin/fpm -s dir -t deb -a all -n $PACKAGE_NAME -v $PACKAGE_VERSION --prefix $DEST_DIR -C $SOURCE_DIR .
