@@ -3,7 +3,9 @@ krux-kafka custom reporting jar
 
 Built from https://github.com/krux/java-kafka-metrics-reporter
 
-This jar is copied to libs/ by package.sh and relies on the following config in server.properties
+The jar pointed to by the kafka-metrics-reporter.jar symlink will
+be copied to the kafka libs dir by package.sh, and relies on the
+following config in server properties to work:
 
 ```
 # additional logger info
@@ -17,4 +19,4 @@ kafka.graphite.metrics.env=prod
 
 
 
- 
+
