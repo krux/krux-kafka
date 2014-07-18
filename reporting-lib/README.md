@@ -20,7 +20,6 @@ kafka.graphite.metrics.env=prod
 #if true, log all reported metrics to stdout. Default is false.
 kafka.graphite.metrics.log.debug=true
 ```
-```
 
 
 
